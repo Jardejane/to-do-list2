@@ -1,4 +1,4 @@
-import css from './container.css';
+import css from './styles/container.css';
 
 export function Container(props) {
   return (

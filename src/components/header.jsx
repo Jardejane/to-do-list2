@@ -1,6 +1,7 @@
+import './styles/header.css'
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container } from "../container/container";
+import { Container } from "./container";
 
 export function Header() {
   return (
@@ -9,7 +10,7 @@ export function Header() {
         <div className="header">
           <Link to="/">
             <img
-              src="https://img.freepik.com/vetores-premium/design-de-logotipo-de-mascote-de-anime-em-estilo-moderno_404419-56.jpg?w=360"
+              src="https://i0.wp.com/www.jbox.com.br/wp/wp-content/uploads/2022/06/oshinoko-destacada.jpg?w=774&quality=99&strip=all&ssl=1"
               alt="Imagem de anime"
             />
           </Link>
