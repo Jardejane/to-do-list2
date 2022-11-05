@@ -7,6 +7,12 @@ const App = {
     return resp
     
   },
+  getIdApp: async(_id) =>{
+    const res = await api.get(`/anime/${_id}`)
+    const resp = await res.data
+    console.log(resp)
+    return resp
+  },
 
   deleteApp: async(_id) =>{
     const res = await api.delete(`/anime/${_id}`)

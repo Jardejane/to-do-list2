@@ -11,12 +11,11 @@ export function AnimeCard({
   description,
   handleRemove,
 }) {
-  const navigate = useNavigate()
+ 
 
   const remove = (e) => {
     e.preventDefault();
     handleRemove(_id);
-    navigate('/')
   };
 
   return (

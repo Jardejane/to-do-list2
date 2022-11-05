@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import App from "../components/api/api-helper";
 import { AnimeCard } from "../components/card";
 
-
 export function Home() {
 
   const [anime, setAnime] = useState([]);
@@ -13,10 +12,13 @@ export function Home() {
     const animes = await App.getApp();
     return setAnime(animes);
   }
-
+  
   async function deleteAnime(_id){
-    const animes = await App.deleteApp(_id)
-    return setAnime(animes?.map((animes) => animes._id !== _id))
+    const newAnime = anime.filter(
+      (animess) => animess._id !== _id
+    )
+    setAnime(newAnime);
+    await App.deleteApp(_id)
   }
 
   useEffect(() => {
