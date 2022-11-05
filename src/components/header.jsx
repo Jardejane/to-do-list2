@@ -9,7 +9,7 @@ export function Header() {
       <Container>
         <div className="header">
           <Link to="/">
-            <img
+            <img className='logo'
               src="https://i0.wp.com/www.jbox.com.br/wp/wp-content/uploads/2022/06/oshinoko-destacada.jpg?w=774&quality=99&strip=all&ssl=1"
               alt="Imagem de anime"
             />

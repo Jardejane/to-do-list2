@@ -1,12 +1,38 @@
+import '../components/styles/home.css'
 import React from "react";
-// import App from "../components/api/api-helper";
+import { useEffect, useState } from "react";
+import App from "../components/api/api-helper";
+import { AnimeCard } from "../components/card";
 
 
 export function Home() {
-   
+  const [anime, setAnime] = useState([]);
+
+  async function allAnime() {
+    const animes = await App.getApp();
+    return setAnime(animes);
+  }
+
+  useEffect(() => {
+    allAnime();
+  }, []);
   return (
-    <div>
-      <p>Hello Home</p>
-    </div>
+    <section className="all">
+      <h1>Animes</h1>
+
+      <section className="card">
+        {anime?.map((anime, index) => (
+          <AnimeCard
+            key={index}
+            image={anime.image}
+            _id={anime._id}
+            name={anime.name}
+            character={anime.character}
+            year={anime.year}
+            description={anime.description}
+          />
+        ))}
+      </section>
+    </section>
   );
 }
