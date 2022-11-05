@@ -6,11 +6,17 @@ import { AnimeCard } from "../components/card";
 
 
 export function Home() {
+
   const [anime, setAnime] = useState([]);
 
   async function allAnime() {
     const animes = await App.getApp();
     return setAnime(animes);
+  }
+
+  async function deleteAnime(_id){
+    const animes = await App.deleteApp(_id)
+    return setAnime(animes?.map((animes) => animes._id !== _id))
   }
 
   useEffect(() => {
@@ -30,6 +36,7 @@ export function Home() {
             character={anime.character}
             year={anime.year}
             description={anime.description}
+            handleRemove = {deleteAnime}
           />
         ))}
       </section>

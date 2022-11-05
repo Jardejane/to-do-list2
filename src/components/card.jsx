@@ -1,5 +1,6 @@
 import "./styles/card.css";
 import { BsPencil, BsFillTrashFill } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 export function AnimeCard({
   image,
@@ -10,10 +11,14 @@ export function AnimeCard({
   description,
   handleRemove,
 }) {
+  const navigate = useNavigate()
+
   const remove = (e) => {
     e.preventDefault();
     handleRemove(_id);
+    navigate('/')
   };
+
   return (
     <section className="container-card">
       <img className="image" src={image} alt="Anime" />
@@ -42,7 +47,7 @@ export function AnimeCard({
         </button>
         {handleRemove ? (
           <button className="remover" onClick={remove}>
-            <BsFillTrashFill /> Excluir
+            <BsFillTrashFill /> Apagar
           </button>
         ) : (
           <span></span>
