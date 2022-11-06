@@ -33,7 +33,7 @@ export function Pesquise() {
       </div>
 
       <div>
-        {animeId._id !== "" ? (
+        {animeId._id &&(
           <AnimeCard
             image={animeId.image}
             name={animeId.name}
@@ -42,8 +42,6 @@ export function Pesquise() {
             description={animeId.description}
             _id={animeId._id}
           />
-        ) : (
-          <span></span>
         )}
       </div>
     </section>

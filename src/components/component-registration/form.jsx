@@ -1,17 +1,14 @@
-import Input from "../components/component-registration/input";
+import Buttonform from "./button-forms.jsx";
+import Input from "./input.jsx";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import App from "../components/api/api-helper";
 
-export function Registration() {
-  const navigate = useNavigate();
-  const [anime, setAnime] = useState({});
+export function AnimeForm({ handleSubmit, btnText, animeData }) {
+  const [anime, setAnime] = useState(animeData || []);
 
   const submit = (e) => {
     e.preventDefault();
     console.log(anime);
-    App.postApp(anime);
-    navigate("/");
+    handleSubmit(anime);
   };
 
   function handleChange(e) {
@@ -65,10 +62,7 @@ export function Registration() {
           handleOnChange={handleChange}
           value={anime.description}
         />
-
-        <button type="submit" className="btn-submit">
-          Submit
-        </button>
+        <Buttonform text={btnText} />
       </form>
     </section>
   );
