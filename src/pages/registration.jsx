@@ -7,6 +7,7 @@ export function Registration() {
   const navigate = useNavigate();
   const [anime, setAnime] = useState({});
 
+
   const submit = (e) => {
     e.preventDefault();
     console.log(anime);

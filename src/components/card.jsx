@@ -1,6 +1,6 @@
 import "./styles/card.css";
 import { BsPencil, BsFillTrashFill } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function AnimeCard({
   image,
@@ -41,9 +41,11 @@ export function AnimeCard({
         </section>
       </section>
       <section className="informações-button">
-        <button>
-          <BsPencil /> Editar
-        </button>
+        <section>
+        <Link to= {`/edit/${_id}`}>
+                <BsPencil/> Editar
+            </Link>
+        </section>
         {handleRemove ? (
           <button className="remover" onClick={remove}>
             <BsFillTrashFill /> Apagar
@@ -55,3 +57,4 @@ export function AnimeCard({
     </section>
   );
 }
+// npx react-modal

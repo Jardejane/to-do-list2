@@ -14,7 +14,7 @@ export function AnimeForm({ handleSubmit, btnText, animeData }) {
   function handleChange(e) {
     setAnime({ ...anime, [e.target.name]: e.target.value });
   }
-
+ console.log(animeData)
   return (
     <section>
       <form onSubmit={submit}>
