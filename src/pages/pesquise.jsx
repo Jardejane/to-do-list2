@@ -1,31 +1,22 @@
-import "../components/styles/card.css";
+import "../components/styles/pesquise.css";
 import React from "react";
 import { useState } from "react";
 import { AnimeCard } from "../components/card";
 import App from "../components/api/api-helper";
-// {
-//     image: "",
-//     name: "",
-//     character: "",
-//     year: "",
-//     description: "",
-//     _id: "",
-//   }
-App.getIdApp("6366d5b9f03a567ea7569de9");
+
 export function Pesquise() {
   const [input, setInput] = useState([]);
-  const { animeId, setAnimeId } = useState([]);
+  const [animeId, setAnimeId] = useState({});
 
   async function getId(_id) {
     const animes = await App.getIdApp(_id);
-    console.log(animes.name + "anime");
-    return setAnimeId(animes.filter((animes) => animes._id !== _id));
+    console.log(animes);
+    setAnimeId({ ...animes });
   }
-  console.log(App.getIdApp("6366d5b9f03a567ea7569de9"))
-  console.log(setAnimeId + "set")
+
   return (
     <section className="contairner">
-      <div>
+      <div className="inputs">
         <div className="input-group">
           <input
             required=""
@@ -42,19 +33,6 @@ export function Pesquise() {
       </div>
 
       <div>
-        {animeId?.map((animeId) => (
-          <AnimeCard
-            image={animeId.image}
-            name={animeId.name}
-            character={animeId.character}
-            year={animeId.year}
-            description={animeId.description}
-            _id={animeId._id}
-          />
-        ))}
-      </div>
-
-      {/* <div>
         {animeId._id !== "" ? (
           <AnimeCard
             image={animeId.image}
@@ -67,7 +45,7 @@ export function Pesquise() {
         ) : (
           <span></span>
         )}
-      </div> */}
+      </div>
     </section>
   );
 }
