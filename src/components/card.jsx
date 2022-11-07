@@ -41,14 +41,15 @@ export function AnimeCard({
         </section>
       </section>
       <section className="informações-button">
-        <section>
-        <Link to= {`/edit/${_id}`}>
-                <BsPencil/> Editar
-            </Link>
-        </section>
+      
+
+        <Link className="remover" to= {`/edit/${_id}`} >
+                <BsPencil/>
+         </Link>
+
         {handleRemove ? (
           <button className="remover" onClick={remove}>
-            <BsFillTrashFill /> Apagar
+            <BsFillTrashFill />
           </button>
         ) : (
           <span></span>

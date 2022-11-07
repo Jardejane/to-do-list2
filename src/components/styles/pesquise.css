@@ -1,69 +1,81 @@
 .container-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 1rem;
-    height: 55vh;
-    width: 17vw;
-    margin-left: 20px;
-    border-radius: 20px;
-    background-color: rgb(30, 87, 125);
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  }
-  .image{
-    height: 40%;
-    width: 100%;
-    border-radius: 20px;
-  }
-  span {
-    color: rgb(6, 22, 110);
-  }
-  p {
-    color: rgb(43, 5, 65);
-  }
-  .informações-button {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    justify-content: center;
-  }
-  .informações-button a,
-  .informações-button button {
-    text-decoration: none;
-    border: none;
-    color: #222;
-    background-color: rgb(133, 164, 192);
-    font-size: 0.9em;
-    padding: 4px;
-    margin-left: 19px;
-    margin-top: 9px;
-    cursor: pointer;
-    border: 1px solid #222;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    border-radius: 5px;
-  }
-  
-  .informações-button {
-    margin-right: 0.5em;
-  }
-  .informações-button a:hover,
-  .informações-button button:hover {
-    background-color: rgb(69, 182, 75);
-    color: #000000;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  height: 55vh;
+  width: 17vw;
+  margin-left: 20px;
+  border-radius: 20px;
+  background-color: rgb(30, 87, 125);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.image {
+  height: 40%;
+  width: 70%;
+  border-radius: 20px;
 
-  .all-text-pai{
-   margin-top: 2vh;
-  }
-  .contairner{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  .inputs{
-    padding: 1rem;
-  }
+}
+span {
+  color: rgb(6, 22, 110);
+}
+p {
+  color: rgb(43, 5, 65);
+}
+.find {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+}
+.find{
+  padding:.7em .7em;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 50;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  height: 4vh;
+  margin-left: 3px;
+}
+
+.find{
+  margin-top: .5vh;
+  margin-right: 1vh;
+}
+
+.find:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.find:active{
+  transform: translateY(-1px);
+}
+.all-text-pai {
+  margin-top: 2vh;
+}
+.contairner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.input-group{
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  flex-direction: row;
+  padding: 1vw;
+}

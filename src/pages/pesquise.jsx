@@ -16,24 +16,22 @@ export function Pesquise() {
 
   return (
     <section className="contairner">
-      <div className="inputs">
-        <div className="input-group">
-          <input
-            required=""
-            type="text"
-            name="number"
-            className="input"
-            onChange={(event) => setInput(event.target.value)}
-          />
-          <label className="user-label">Digite o Id</label>
-        </div>
+      <div className="input-group">
+        <label className="user-label">Digite o Id</label>
+        <input
+          required=""
+          type="text"
+          name="number"
+          className="input"
+          onChange={(event) => setInput(event.target.value)}
+        />
         <button className="find" onClick={() => getId(input)}>
-          Pesquisar Anime
+          Pesquisar
         </button>
       </div>
 
       <div>
-        {animeId._id &&(
+        {animeId._id && (
           <AnimeCard
             image={animeId.image}
             name={animeId.name}

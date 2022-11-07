@@ -1,4 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import '../components/styles/update.css'
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AnimeForm } from "../components/component-registration/form";
@@ -33,7 +34,7 @@ export function Update() {
 
   return (
     <>
-      <section>
+      <section className='general'>
         <div>
           <h1>Anime: {anime.name}</h1>
           <button className="btn" onClick={editing}>
@@ -43,6 +44,8 @@ export function Update() {
           <div className="cards">
             {!btxAnime ? (
               <div className="anime-information">
+               <div className='image'><img  src={anime.image} width ="70" height="60" alt="imagem de anime" /></div>
+
                 <p>
                   <span>Id:</span> {anime._id}{" "}
                 </p>
@@ -60,8 +63,9 @@ export function Update() {
                 </p>
               </div>
             ) : (
-              <div className="film-card">
-                <AnimeForm
+
+              <div className="anime-information2">
+                <AnimeForm 
                   handleSubmit={editAnime}
                   btnText="Concluir edição"
                   animeData={anime}
@@ -74,3 +78,5 @@ export function Update() {
     </>
   );
 }
+
+

@@ -1,3 +1,4 @@
+import "../components/styles/registration.css";
 import Input from "../components/component-registration/input";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -7,11 +8,10 @@ export function Registration() {
   const navigate = useNavigate();
   const [anime, setAnime] = useState({});
 
-
   const submit = (e) => {
     e.preventDefault();
     console.log(anime);
-    App.postApp({...anime, year: Number(anime.year)});
+    App.postApp({ ...anime, year: Number(anime.year) });
     navigate("/");
   };
 
@@ -20,13 +20,14 @@ export function Registration() {
   }
 
   return (
-    <section>
+    <section className="form">
       <form onSubmit={submit}>
+        <h1>Cadastre seu Anime</h1>
         <Input
           type="text"
           text="Link da capa"
           name="image"
-          placeholder="Adicione o Link"
+          placeholder="Adicione o link"
           handleOnChange={handleChange}
           value={anime.image ? anime.image : ""}
         />
@@ -50,7 +51,7 @@ export function Registration() {
         />
 
         <Input
-          type="text"
+          type="number"
           text="Ano"
           name="year"
           placeholder="Adicione o ano"
@@ -68,7 +69,10 @@ export function Registration() {
         />
 
         <button type="submit" className="btn-submit">
-          Submit
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span> Cadastre
         </button>
       </form>
     </section>
