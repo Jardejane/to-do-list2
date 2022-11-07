@@ -38,7 +38,7 @@ export function Update() {
         <div>
           <h1>Anime: {anime.name}</h1>
           <button className="btn" onClick={editing}>
-            {!btxAnime ? "Editar Projeto" : "Fechar"}
+            {!btxAnime ? "Editar" : "Fechar"}
           </button>
 
           <div className="cards">

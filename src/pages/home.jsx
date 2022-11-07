@@ -1,10 +1,10 @@
-import "../components/styles/home.css";
-import React from "react";
-import { useEffect, useState } from "react";
-import App from "../components/api/api-helper";
-import { AnimeCard } from "../components/card";
+import '../components/styles/home.css';
+import React from 'react';
+import { useEffect, useState } from 'react';
+import App from '../components/api/api-helper';
+import { AnimeCard } from '../components/card';
 
-export function Home({animeData}) {
+export function Home({ animeData }) {
   const [anime, setAnime] = useState(animeData || []);
   async function allAnime() {
     const animes = await App.getApp();
@@ -20,7 +20,6 @@ export function Home({animeData}) {
   useEffect(() => {
     allAnime();
   }, []);
-
 
   return (
     <section className="all">
@@ -42,6 +41,4 @@ export function Home({animeData}) {
       </section>
     </section>
   );
-
-
 }

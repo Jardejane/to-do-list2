@@ -1,8 +1,8 @@
-import "../components/styles/pesquise.css";
-import React from "react";
-import { useState } from "react";
-import { AnimeCard } from "../components/card";
-import App from "../components/api/api-helper";
+import '../components/styles/pesquise.css';
+import React from 'react';
+import { useState } from 'react';
+import { AnimeCard } from '../components/card';
+import App from '../components/api/api-helper';
 
 export function Pesquise() {
   const [input, setInput] = useState([]);

@@ -1,6 +1,6 @@
-import "./styles/card.css";
-import { BsPencil, BsFillTrashFill } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import './styles/card.css';
+import { BsPencil, BsFillTrashFill } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 export function AnimeCard({
   image,
@@ -11,8 +11,6 @@ export function AnimeCard({
   description,
   handleRemove,
 }) {
- 
-
   const remove = (e) => {
     e.preventDefault();
     handleRemove(_id);
@@ -24,7 +22,7 @@ export function AnimeCard({
       <section className="all-text-pai">
         <section className="all-text">
           <p>
-            <span >Id:</span> { _id}
+            <span>Id:</span> {_id}
           </p>
           <p>
             <span>Nome:</span> {name}
@@ -41,11 +39,9 @@ export function AnimeCard({
         </section>
       </section>
       <section className="informações-button">
-      
-
-        <Link className="remover" to= {`/edit/${_id}`} >
-                <BsPencil/>
-         </Link>
+        <Link className="remover" to={`/edit/${_id}`}>
+          <BsPencil />
+        </Link>
 
         {handleRemove ? (
           <button className="remover" onClick={remove}>

@@ -25,10 +25,10 @@
 .item a:hover {
   color: blue;
 }
-.logo{
+.logo {
   height: 60px;
   width: 70px;
 }
-.logo{
-    border-radius: 50%;
+.logo {
+  border-radius: 50%;
 }

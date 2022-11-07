@@ -16,7 +16,6 @@
   height: 40%;
   width: 70%;
   border-radius: 20px;
-
 }
 span {
   color: rgb(6, 22, 110);
@@ -30,8 +29,8 @@ p {
   align-items: baseline;
   justify-content: center;
 }
-.find{
-  padding:.7em .7em;
+.find {
+  padding: 0.7em 0.7em;
   font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 2.5px;
@@ -48,8 +47,8 @@ p {
   margin-left: 3px;
 }
 
-.find{
-  margin-top: .5vh;
+.find {
+  margin-top: 0.5vh;
   margin-right: 1vh;
 }
 
@@ -60,7 +59,7 @@ p {
   transform: translateY(-7px);
 }
 
-.find:active{
+.find:active {
   transform: translateY(-1px);
 }
 .all-text-pai {
@@ -72,7 +71,7 @@ p {
   flex-direction: column;
   align-items: center;
 }
-.input-group{
+.input-group {
   display: flex;
   align-items: baseline;
   justify-content: center;

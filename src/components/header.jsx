@@ -1,7 +1,7 @@
-import './styles/header.css'
-import React from "react";
-import { Link } from "react-router-dom";
-import { Container } from "./container";
+import './styles/header.css';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Container } from './container';
 
 export function Header() {
   return (
@@ -9,7 +9,8 @@ export function Header() {
       <Container>
         <div className="header">
           <Link to="/">
-            <img className='logo'
+            <img
+              className="logo"
               src="https://i0.wp.com/www.jbox.com.br/wp/wp-content/uploads/2022/06/oshinoko-destacada.jpg?w=774&quality=99&strip=all&ssl=1"
               alt="Imagem de anime"
             />

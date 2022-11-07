@@ -10,7 +10,6 @@ export function Registration() {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(anime);
     App.postApp({ ...anime, year: Number(anime.year) });
     navigate("/");
   };

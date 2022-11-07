@@ -1,20 +1,19 @@
-import Buttonform from "./button-forms.jsx";
-import Input from "./input.jsx";
-import { useState } from "react";
+import Buttonform from './button-forms.jsx';
+import Input from './input.jsx';
+import { useState } from 'react';
 
 export function AnimeForm({ handleSubmit, btnText, animeData }) {
   const [anime, setAnime] = useState(animeData || []);
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(anime);
     handleSubmit(anime);
   };
 
   function handleChange(e) {
     setAnime({ ...anime, [e.target.name]: e.target.value });
   }
- console.log(animeData)
+  console.log(animeData);
   return (
     <section>
       <form onSubmit={submit}>
@@ -24,7 +23,7 @@ export function AnimeForm({ handleSubmit, btnText, animeData }) {
           name="image"
           placeholder="Adicione o Link"
           handleOnChange={handleChange}
-          value={anime.image ? anime.image : ""}
+          value={anime.image ? anime.image : ''}
         />
 
         <Input
