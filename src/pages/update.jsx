@@ -1,37 +1,35 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import api from "../components/api/api";
 import { AnimeForm } from "../components/component-registration/form";
+import App from "../components/api/api-helper";
 
 export function Update() {
   const { _id } = useParams();
   const [anime, setAnime] = useState([]);
   const [btxAnime, setbtxAnime] = useState(false);
 
-  async function patch() {
-   return await api
-      .patch(`/anime/${_id}`, {
-        name: anime.name,
-        character: anime.character,
-        year: anime.year,
-        description: anime.description,
-      })
-      .then((response) => {
-        console.log(response)
-        setAnime(response.data);
-        setbtxAnime(false);
-      })
-
-      .catch((err) => console.log(err));
-  }
   function editing() {
     setbtxAnime(!btxAnime);
- 
   }
+
+  async function getAnime() {
+    const animes = await App.getApp().then((data) =>
+      data.find((anime) => anime._id === _id)
+    );
+    setbtxAnime(false);
+    return setAnime(animes);
+  }
+
   useEffect(() => {
-    patch()
-    console.lo(patch());
+    getAnime();
   }, []);
+
+  async function editAnime(data) {
+    App.patchApp(_id, data).then(() => {
+      window.location.reload();
+    });
+  }
 
   return (
     <>
@@ -64,7 +62,7 @@ export function Update() {
             ) : (
               <div className="film-card">
                 <AnimeForm
-                  handleSubmit={patch}
+                  handleSubmit={editAnime}
                   btnText="Concluir edição"
                   animeData={anime}
                 />
